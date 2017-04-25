@@ -1,3 +1,4 @@
+import { Http,HttpModule } from '@angular/http';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -13,6 +14,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { SuperTabsModule } from 'ionic2-super-tabs';
 
+import { StuffProvider } from '../providers/stuff';
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -24,7 +28,8 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    SuperTabsModule.forRoot()
+    SuperTabsModule.forRoot(),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -37,7 +42,9 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    StuffProvider
+    
   ]
 })
 export class AppModule {}
