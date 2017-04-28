@@ -26,68 +26,52 @@ export class ContactPage {
   constructor(public navCtrl: NavController, private stuffProvider: StuffProvider) {
     this.anything2 = 'Anthing set in constructor';
 
-
   }
+
   ionViewDidLoad() {
     console.log('load tab2');
-    this.loadData1();
-    this.loadData2();
     this.anything3 = 'Anthing set in ionViewDidLoad()';
-  }
-  ngOnInit() {
-    this.anything4 = 'Anthing set in ngOnInit()';
-    this.loadData3();
-    this.loadData4();
-  }
-
-
-  loadData1() {
-    // Called from ionViewDidLoad()
+    // Any data set here is not accessible
     this.stuff1 = {
       stuff: ['x', 'y', 'z']
     }
 
-  }
-
-  loadData2() {
-    // Called from ionViewDidLoad()
     this.stuffProvider.getStuff().subscribe((response) => {
-      console.log('provider success 1');
+      // Any data set here is not accesible
       this.stuff2 = {
         stuff: response.data
       };
+      // This fires correctly
+      console.log('provider success 1');
+      // This log is printed
       console.log(this.stuff2);
     }, (error) => {
       console.log('provider error 1 : ' + error);
     });
 
   }
-
-  loadData3() {
-    // Called from ngOnInit()
+  ngOnInit() {
+    this.anything4 = 'Anthing set in ngOnInit()';
+    // Any data set here is accessible
     this.stuff3 = {
       stuff: ['x', 'y', 'z']
     };
 
-  }
-
-  loadData4() {
-    // Called from ngOnInit()
     this.stuffProvider.getStuff().subscribe((response) => {
-      console.log('provider success 2');
+      // Any data set here is not accesible
       this.stuff4 = {
         stuff: response.data
       };
+      // Not even this
       this.stuff5 = {
         stuff: ['x', 'y', 'z']
       };
-
+      // This fires correctly
+      console.log('provider success 2');
 
     }, (error) => {
       console.log('provider error 2 : ' + error);
     });
-
-
   }
 
 }
