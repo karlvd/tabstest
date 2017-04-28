@@ -1,9 +1,28 @@
-
 <ion-content no-padding no-margin>
+  Anything1: {{anything1}}
+  <br>
+  Anything2: {{anything2}}
+  <br>
+  Anything3: {{anything3}}
+  <br>
+  Anything4: {{anything4}}
+  <br>
+  Stuff1: {{stuff1?.stuff}}
+  <br> 
+  Stuff2: {{stuff2?.stuff}}
+  <br> 
+  Stuff3: {{stuff3?.stuff}}
+  <br> 
+  Stuff4: {{stuff4?.stuff}}
+  <br> 
+  Stuff5: {{stuff5?.stuff}}
+  <br> 
+  Stuff6: {{stuff6?.stuff}}
+  
   <ion-list no-padding no-margin>
-  <ion-item *ngFor="let item of stuff?.stuff" >
-    Item
-  </ion-item>  
-</ion-list>
+    <ion-item *ngFor="let item of stuff1?.stuff">
+      Item
+    </ion-item>
+  </ion-list>
 
 </ion-content>

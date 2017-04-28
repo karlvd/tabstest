@@ -30,7 +30,7 @@
     "ionic2-super-tabs": "2.3.0"
   },
   "devDependencies": {
-    "@ionic/app-scripts": "1.3.0",
+    "@ionic/app-scripts": "1.3.0",    
     "typescript": "~2.2.1"
   },
   "cordovaPlugins": [

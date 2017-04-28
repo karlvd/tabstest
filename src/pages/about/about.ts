@@ -8,13 +8,14 @@ import { StuffProvider } from '../../providers/stuff';
   templateUrl: 'about.html'
 })
 export class AboutPage {
-  stuff: any;
+ stuff: any;
 
   constructor(public navCtrl: NavController, private stuffProvider: StuffProvider) {
 
   }
+
   ionViewDidLoad() {
-    console.log('load');
+    console.log('load tab 1');
     this.loadData();
   }
 
